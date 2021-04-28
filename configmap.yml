@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  config.yaml: "\nstorage: /verdaccio/storage\nauth:\n  htpasswd:\n    file: /verdaccio/conf/htpasswd\n\
+    \    max_users: 15\nuplinks:\n  npmjs:\n    url: https://registry.npmjs.org/\n\
+    packages:\n  '@test/*':\n    access: $authenticated\n    publish: $authenticated\n\
+    \  '**':\n    access: $authenticated\n    publish: $authenticated\n    proxy:\
+    \ npmjs\nweb:\n  title: Verdaccio\n  scope: \"@test\"\nlogs:\n  - {type: stdout,\
+    \ format: pretty-timestamped, level: http}\nstore:\n  aws-s3-storage:\n    bucket:\
+    \ s3_bucket"
+  htpasswd: 'user:$apr1$GxNVGMIl$5m4CTNAgjgvI3OxW7pQPy/
+
+    '
+kind: ConfigMap
+metadata:
+  labels:
+    component: verdaccio
+    name: verdaccio
+  name: verdaccio
