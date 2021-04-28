@@ -6,8 +6,8 @@ metadata:
     ...
     ...
   labels:
-    name: verdaccio
-  name: verdaccio
+    name: verdaccio-app
+  name: verdaccio-app
 spec:
   rules:
     ...
