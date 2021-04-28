@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: verdaccio
+  name: verdaccio
+spec:
+  ports:
+    - port: 4873
+      protocol: TCP
+      targetPort: 4873
+  selector:
+    name: verdaccio
+  type: ClusterIP
