@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    name: verdaccio
-  name: verdaccio
+    name: verdaccio-app
+  name: verdaccio-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: verdaccio
+      name: verdaccio-app
   template:
     metadata:
       labels:
-        name: verdaccio
+        name: verdaccio-app
     spec:
       containers:
         - image: ECR/verdaccio:latest
@@ -21,7 +21,7 @@ spec:
               path: /-/ping
               port: 4873
             initialDelaySeconds: 60
-          name: verdaccio
+          name: verdaccio-app
           ports:
             - containerPort: 4873
           readinessProbe:
@@ -35,5 +35,5 @@ spec:
               readOnly: true
       volumes:
         - configMap:
-            name: verdaccio
+            name: verdaccio-app
           name: verdaccio-vol
