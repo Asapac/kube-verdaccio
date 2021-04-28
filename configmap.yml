@@ -13,6 +13,6 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    component: verdaccio
-    name: verdaccio
-  name: verdaccio
+    component: verdaccio-app
+    name: verdaccio-app
+  name: verdaccio-app
