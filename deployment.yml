@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: verdaccio
+  name: verdaccio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: verdaccio
+  template:
+    metadata:
+      labels:
+        name: verdaccio
+    spec:
+      containers:
+        - image: ECR/verdaccio:latest
+          livenessProbe:
+            httpGet:
+              path: /-/ping
+              port: 4873
+            initialDelaySeconds: 60
+          name: verdaccio
+          ports:
+            - containerPort: 4873
+          readinessProbe:
+            httpGet:
+              path: /-/ping
+              port: 4873
+            initialDelaySeconds: 60
+          volumeMounts:
+            - mountPath: /verdaccio/conf
+              name: verdaccio-vol
+              readOnly: true
+      volumes:
+        - configMap:
+            name: verdaccio
+          name: verdaccio-vol
