@@ -30,6 +30,18 @@ verdaccio
 └── service.yaml
 ```
 
+## User management
+
+Username: testuser
+Password: 
+
+```
+htpasswd -n testuser
+New password:
+Re-type new password:
+testuser:$apr1$dMWhPQ1T$mpc0oMK1sSXBmZb88yz551
+```
+
 ## Issues, challenges and solution
 
 1. bitbucket plugin
