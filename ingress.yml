@@ -3,13 +3,21 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-    ...
-    ...
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   labels:
+    component: verdaccio-app
     name: verdaccio-app
   name: verdaccio-app
 spec:
   rules:
-    ...
+    - host: <your_DNS>.<region>.cloudapp.azure.com
+      http:
+        paths:
+          - backend:
+              serviceName: verdaccio-app
+              servicePort: 4873
+            path: /
   tls:
-    ...
+    - hosts:
+        - <your_DNS>.<region>.eastus.cloudapp.azure.com
+      secretName: tls-secret-prod

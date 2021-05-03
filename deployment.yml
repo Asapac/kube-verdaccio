@@ -15,7 +15,7 @@ spec:
         name: verdaccio-app
     spec:
       containers:
-        - image: ECR/verdaccio:latest
+        - image: verdaccio/verdaccio:4
           livenessProbe:
             httpGet:
               path: /-/ping

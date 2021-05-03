@@ -5,9 +5,8 @@ data:
     packages:\n  '@test/*':\n    access: $authenticated\n    publish: $authenticated\n\
     \  '**':\n    access: $authenticated\n    publish: $authenticated\n    proxy:\
     \ npmjs\nweb:\n  title: Verdaccio\n  scope: \"@test\"\nlogs:\n  - {type: stdout,\
-    \ format: pretty-timestamped, level: http}\nstore:\n  aws-s3-storage:\n    bucket:\
-    \ s3_bucket"
-  htpasswd: 'user:$apr1$GxNVGMIl$5m4CTNAgjgvI3OxW7pQPy/
+    \ format: pretty-timestamped, level: http}"
+  htpasswd: 'testuser:$apr1$dMWhPQ1T$mpc0oMK1sSXBmZb88yz551
 
     '
 kind: ConfigMap
