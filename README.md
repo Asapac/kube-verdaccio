@@ -30,10 +30,10 @@ testuser:$apr1$dMWhPQ1T$mpc0oMK1sSXBmZb88yz551
 ### Setting up
 **1. Create your Azure free account**
 
-**2. Follow the document 1 above**
+**2. Follow the document 2 above**
 - Create AKS cluster
 
-**3. Follow the document 2 above**
+**3. Follow the document 3 above**
 - Create an ingress controller
 - Install cert-manager
 - Create a CA cluster issuer
